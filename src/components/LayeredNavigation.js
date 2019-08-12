@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useContext} from 'react';
 import RestaurantsContext from '../context/restaurants-context';
+import style from '../style/LayeredNavigation.module.css';
 import { cuisinesData } from '../data';
 
 const LayeredNavigation = () => {
@@ -61,17 +62,33 @@ const LayeredNavigation = () => {
     }, [rating]);
 
     return (
-        <div>
+        <div className={[style.layered_navigation].join(' ')}>
             <div>
                 <h3>Rating</h3>
                 <div>
-                    <input type="radio" name="rating" value="1" checked={rating === 1} onChange={applyRating} /><span>1</span><br/>
-                    <input type="radio" name="rating" value="2" checked={rating === 2} onChange={applyRating} /><span>2</span><br/>
-                    <input type="radio" name="rating" value="3" checked={rating === 3} onChange={applyRating} /><span>3</span><br/>
-                    <input type="radio" name="rating" value="4" checked={rating === 4} onChange={applyRating} /><span>4</span><br/>
-                    <input type="radio" name="rating" value="5" checked={rating === 5} onChange={applyRating} /><span>5</span><br/>
+                    <label className={style.label}>1
+                        <input type="radio" name="rating" value="1" checked={rating === 1} onChange={applyRating} />
+                        <span className={style.checkmark}></span>
+                    </label>
+                    <label className={style.label}>2
+                        <input type="radio" name="rating" value="2" checked={rating === 2} onChange={applyRating} />
+                        <span className={style.checkmark}></span>
+                    </label>
+                    <label className={style.label}>3
+                        <input type="radio" name="rating" value="3" checked={rating === 3} onChange={applyRating} />
+                        <span className={style.checkmark}></span>
+                    </label>
+                    <label className={style.label}>4
+                        <input type="radio" name="rating" value="4" checked={rating === 4} onChange={applyRating} />
+                        <span className={style.checkmark}></span>
+                    </label>
+                    <label className={style.label}>5
+                        <input type="radio" name="rating" value="5" checked={rating === 5} onChange={applyRating} />
+                        <span className={style.checkmark}></span>
+                    </label>
                 </div>
             </div>
+            <div className={style.splitter}></div>
             <div>
                 <h3>Price</h3>
                 <div>
@@ -79,6 +96,7 @@ const LayeredNavigation = () => {
                     <input type="range" value={price.max} onChange={applyMaxPrice} min="1" max="5" step="1" />
                 </div>
             </div>
+            <div className={style.splitter}></div>
             <div>
                 <h3>Cuisines</h3>
                 <div>
@@ -93,6 +111,7 @@ const LayeredNavigation = () => {
                     }
                 </div>
             </div>
+            <div className={style.splitter}></div>
         </div>
     );
 };
