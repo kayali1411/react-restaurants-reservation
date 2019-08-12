@@ -8,7 +8,7 @@ const RestaurantsList = () => {
     const {filter} = useContext(RestaurantsContext);
 
     useEffect(() => {
-        setRestaurants(restaurants
+        setRestaurants(Data
             .filter((restaurant) => {
                 const priceMatch   = filter.price !== undefined ? restaurant.price >= filter.price.min && restaurant.price <= filter.price.max : true;
                 const ratingMatch  = filter.rating !== undefined ? restaurant.rating === Number(filter.rating) : true;
