@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useReducer } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import Header from './Header';
-import RestaurantsList from './RestaurantsList';
-import LayeredNavigation from './LayeredNavigation';
+// import RestaurantsList from './RestaurantsList';
+// import LayeredNavigation from './LayeredNavigation';
 import Control from './Control';
 import filterReducer from '../reducers/filters';
 import RestaurantsContext from '../context/restaurants-context';
@@ -13,12 +13,16 @@ const App = () => {
         filterDispatch
     }
 
+    useEffect(() => {
+        console.log(filter);
+    }, [filter]);
+
     return (
         <RestaurantsContext.Provider value={store}>
             <Header/>
             <Control/>
-            <LayeredNavigation/>
-            <RestaurantsList/>
+            {/*<LayeredNavigation/>*/}
+            {/*<RestaurantsList/>*/}
         </RestaurantsContext.Provider>
     );
 };
