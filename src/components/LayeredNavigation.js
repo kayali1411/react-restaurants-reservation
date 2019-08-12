@@ -35,26 +35,27 @@ const LayeredNavigation = () => {
 
     const applyCuisine = (e) => {
         cuisineRef.current = true;
-        setCuisines(cuisines.concat(e.target.value));
+        if(e.target.checked) {
+            setCuisines(cuisines.concat(e.target.value));
+        } else {
+            setCuisines(cuisines.filter((cuisine) => cuisine !== e.target.value));
+        }
     }
 
     useEffect(() => {
         if(cuisineRef.current) {
-            console.log(cuisines);
             filterDispatch({ type: 'SET_CUISINE', cuisines });
         }
     }, [cuisines]);
 
     useEffect(() => {
         if(priceRef.current) {
-            console.log(price);
             filterDispatch({ type: 'SET_PRICE', price });
         }
     }, [price]);
 
     useEffect(() => {
         if(ratingRef.current) {
-            console.log(rating);
             filterDispatch({ type: 'SET_RATING', rating });
         }
     }, [rating]);
