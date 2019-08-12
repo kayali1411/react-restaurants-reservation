@@ -27,6 +27,28 @@ const Control = () => {
     return (
         <div>
             <div>
+                {filter.price !== undefined && (
+                    <div>
+                        min price: {filter.price.min}
+                    </div>
+                )}
+                {filter.price !== undefined && (
+                    <div>
+                        max price: {filter.price.max}
+                    </div>
+                )}
+                {filter.rating !== undefined && (
+                    <div>
+                        rating: {filter.rating}
+                    </div>
+                )}
+                {filter.cuisines !== undefined && filter.cuisines.map((cuisine) => (
+                    <div key={cuisine}>
+                        cuisine: {cuisine}
+                    </div>
+                ))}
+            </div>
+            <div>
                 <label htmlFor="sort-by">Sort By</label>
                 <select name="sort-by" id="sort-by" onChange={handleSortBy} value={sortBy}>
                     <option value="text">A - Z</option>
