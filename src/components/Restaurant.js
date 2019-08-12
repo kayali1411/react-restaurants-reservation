@@ -4,8 +4,9 @@ const Restaurant = ({info}) => {
     return (
         <div>
             <h1>{info.name}</h1>
-            <h1>{info.price}</h1>
-            <h1>{info.cuisine.map((type) => <p key={type}>{type}</p>)}</h1>
+            <p>price: {info.price}</p>
+            <p>rating: {info.rating}</p>
+            <p>cuisine: {info.cuisine.map((type) => <span key={type}>{type}</span>)}</p>
         </div>
     )
 };
