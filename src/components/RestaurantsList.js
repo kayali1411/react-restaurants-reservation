@@ -9,7 +9,13 @@ const RestaurantsList = () => {
 
     useEffect(() => {
         setRestaurants(restaurants
-            .filter((restaurant) => true)
+            .filter((restaurant) => {
+                const priceMatch   = filter.price !== undefined ? restaurant.price >= filter.price.min && restaurant.price <= filter.price.max : true;
+                const ratingMatch  = filter.rating !== undefined ? restaurant.rating === Number(filter.rating) : true;
+                const cuisineMatch = filter.cuisines !== undefined ? !!restaurant.cuisines.filter((cuisine) => filter.cuisines.indexOf(cuisine) !== -1) : true;
+
+                return priceMatch && ratingMatch && cuisineMatch;
+            })
             .sort((a,b) => {
                 if(filter.sortBy === 'text') {
                     return (a.name > b.name && filter.sortType === 'ASC') ? 1 : -1;

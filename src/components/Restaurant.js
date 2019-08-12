@@ -6,7 +6,7 @@ const Restaurant = ({info}) => {
             <h1>{info.name}</h1>
             <p>price: {info.price}</p>
             <p>rating: {info.rating}</p>
-            <p>cuisine: {info.cuisine.map((type) => <span key={type}>{type}</span>)}</p>
+            <p>cuisine: {info.cuisines.map((cuisine) => <span key={cuisine}>{cuisine}</span>)}</p>
         </div>
     )
 };

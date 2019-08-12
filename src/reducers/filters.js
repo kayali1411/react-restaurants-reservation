@@ -3,7 +3,7 @@ const filtersReducer = (state, action) => {
         case 'SET_CUISINE':
             return {
                 ...state,
-                cuisine: action.cuisine
+                cuisines: action.cuisines
             }
         case 'SET_PRICE':
             return {
