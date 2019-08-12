@@ -1,6 +1,6 @@
 import React, { useEffect, useReducer } from 'react';
 import Header from './Header';
-// import RestaurantsList from './RestaurantsList';
+import RestaurantsList from './RestaurantsList';
 // import LayeredNavigation from './LayeredNavigation';
 import Control from './Control';
 import filterReducer from '../reducers/filters';
@@ -22,7 +22,7 @@ const App = () => {
             <Header/>
             <Control/>
             {/*<LayeredNavigation/>*/}
-            {/*<RestaurantsList/>*/}
+            <RestaurantsList/>
         </RestaurantsContext.Provider>
     );
 };
