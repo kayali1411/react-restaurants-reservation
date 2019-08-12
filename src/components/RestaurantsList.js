@@ -12,7 +12,7 @@ const RestaurantsList = () => {
             .filter((restaurant) => {
                 const priceMatch   = filter.price !== undefined ? restaurant.price >= filter.price.min && restaurant.price <= filter.price.max : true;
                 const ratingMatch  = filter.rating !== undefined ? restaurant.rating === Number(filter.rating) : true;
-                const cuisineMatch = filter.cuisines !== undefined ? !!restaurant.cuisines.filter((cuisine) => filter.cuisines.indexOf(cuisine) !== -1) : true;
+                const cuisineMatch = filter.cuisines !== undefined ? restaurant.cuisines.find((cuisine) => filter.cuisines.indexOf(cuisine) > -1) : true;
 
                 return priceMatch && ratingMatch && cuisineMatch;
             })
