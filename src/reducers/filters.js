@@ -15,14 +15,10 @@ const filtersReducer = (state, action) => {
                 ...state,
                 rating: action.rating
             }
-        case 'SET_SORT_BY':
+        case 'SET_SORT':
             return {
                 ...state,
-                sortBy: action.sortBy
-            }
-        case 'SET_SORT_TYPE':
-            return {
-                ...state,
+                sortBy: action.sortBy,
                 sortType: action.sortType
             }
         default:

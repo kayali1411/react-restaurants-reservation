@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import RestaurantsContext from '../context/restaurants-context';
 
 const Control = () => {
@@ -6,8 +6,9 @@ const Control = () => {
     const [sortBy, setSortBy]      = useState(filter.sortBy);
     const [sortType, setSortType]  = useState(filter.sortType);
 
-    const handleSortBy = (e) => {
+    const componentMounted = useRef(false);
 
+    const handleSortBy = (e) => {
         setSortBy(e.target.value);
     };
 
@@ -16,18 +17,12 @@ const Control = () => {
     }
 
     useEffect(() => {
-       console.log('componentDidMount!');
-    }, []);
-
-    useEffect(() => {
-        filterDispatch({ type: 'SET_SORT_BY', sortBy });
-        console.log('sort by');
-    }, [sortBy]);
-
-    useEffect(() => {
-        filterDispatch({ type: 'SET_SORT_TYPE', sortType });
-        console.log('sort type');
-    }, [sortType]);
+        if(!componentMounted.current) {
+            componentMounted.current = true;
+        } else {
+            filterDispatch({ type: 'SET_SORT', sortBy, sortType });
+        }
+    }, [sortBy, sortType]);
 
     return (
         <div>
