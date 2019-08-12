@@ -17,14 +17,23 @@ const RestaurantsList = () => {
                 return priceMatch && ratingMatch && cuisineMatch;
             })
             .sort((a,b) => {
-                if(filter.sortBy === 'text') {
-                    return (a.name > b.name && filter.sortType === 'ASC') ? 1 : -1;
+                if(filter.sortBy === 'text' && filter.sortType === 'ASC') {
+                    return a.name > b.name ? 1 : -1;
                 }
-                if(filter.sortBy === 'price') {
-                    return (a.price > b.price && filter.sortType === 'ASC') ? 1 : -1;
+                if(filter.sortBy === 'text' && filter.sortType === 'DSC') {
+                    return a.name < b.name ? 1 : -1;
                 }
-                if(filter.sortBy === 'rating') {
-                    return (a.rating > b.rating && filter.sortType === 'ASC') ? 1 : -1;
+                if(filter.sortBy === 'price' && filter.sortType === 'ASC') {
+                    return a.price > b.price ? 1 : -1;
+                }
+                if(filter.sortBy === 'price' && filter.sortType === 'DSC') {
+                    return a.price < b.price ? 1 : -1;
+                }
+                if(filter.sortBy === 'rating' && filter.sortType === 'ASC') {
+                    return a.price > b.price ? 1 : -1;
+                }
+                if(filter.sortBy === 'rating' && filter.sortType === 'DSC') {
+                    return a.price < b.price ? 1 : -1;
                 }
             }));
     }, [filter]);
