@@ -1,6 +1,6 @@
 const restaurantsData = [
     {
-        id: 'burger-king',
+        id: 'burgerKing',
         name: 'Burger King',
         price: 2,
         rating: 2,
