@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useContext } from 'react';
 import RestaurantsContext from '../context/restaurants-context';
 import Restaurant from './Restaurant';
-import Data from '../restaurantsData';
+import { restaurantsData } from '../data';
 
 const RestaurantsList = () => {
-    const [restaurants, setRestaurants] = useState(Data);
+    const [restaurants, setRestaurants] = useState(restaurantsData);
     const {filter} = useContext(RestaurantsContext);
 
     useEffect(() => {
-        setRestaurants(Data
+        setRestaurants(restaurantsData
             .filter((restaurant) => {
                 const priceMatch   = filter.price !== undefined ? restaurant.price >= filter.price.min && restaurant.price <= filter.price.max : true;
                 const ratingMatch  = filter.rating !== undefined ? restaurant.rating === Number(filter.rating) : true;

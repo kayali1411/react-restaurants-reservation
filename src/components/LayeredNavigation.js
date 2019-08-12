@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useContext} from 'react';
 import RestaurantsContext from '../context/restaurants-context';
+import { cuisinesData } from '../data';
 
 const LayeredNavigation = () => {
     const {filter, filterDispatch} = useContext(RestaurantsContext);
@@ -79,9 +80,17 @@ const LayeredNavigation = () => {
             </div>
             <div>
                 <h3>Cuisines</h3>
-                <input type="checkbox" name="cuisine[]" value="burger" checked={!!cuisines.find((cuisine) => cuisine === 'burger')} onChange={applyCuisine} /><span>burger</span><br/>
-                <input type="checkbox" name="cuisine[]" value="indian" checked={!!cuisines.find((cuisine) => cuisine === 'indian')} onChange={applyCuisine} /><span>indian</span><br/>
-                <input type="checkbox" name="cuisine[]" value="bbq" checked={!!cuisines.find((cuisine) => cuisine === 'bbq')} onChange={applyCuisine} /><span>bbq</span><br/>
+                <div>
+                    {
+                        cuisinesData.map((cuisine) => (
+                            <div key={cuisine}>
+                                <input type="checkbox" name="checkbox[]" value={cuisine} checked={!!cuisines.find((cus) => cus === cuisine)} onChange={applyCuisine} />
+                                <span>{cuisine}</span>
+                                <br/>
+                            </div>
+                        ))
+                    }
+                </div>
             </div>
         </div>
     );
