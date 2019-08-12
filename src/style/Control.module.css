@@ -1,0 +1,86 @@
+.control {
+    background-color: #FAFAFA;
+    padding: 20px 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.selected_filter_block {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.selected_filter {
+    align-self: center;
+    padding: 5px 20px;
+    background-color: #ff4d4d;
+    color: #F9F9F9;
+    border-radius: 25px;
+}
+
+.sort_by {
+    padding-left: 60px;
+    display: flex;
+}
+
+.sort_type {
+    padding-left: 60px;
+}
+
+.select {
+    padding: 10px 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: #D4D4D4;
+    border: 1px solid #C8C8C8;
+    margin-left: 20px;
+    cursor: pointer;
+    color: #333;
+    border-radius: 3px;
+    transition: all ease 0.5s;
+}
+
+.sort_by_label {
+    align-self: center;
+}
+
+.select option {
+    background-color: #F9F9F9;
+}
+
+.select:focus {
+    outline: none;
+}
+
+.button {
+    padding: 10px 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: #158EAF;
+    border: none;
+    border-bottom: 4px solid #117894;
+    margin-left: 20px;
+    cursor: pointer;
+    color: #FFF;
+    border-radius: 3px;
+    transition: all ease 0.5s;
+}
+
+.button:active {
+    background-color: #117894;
+}
+
+.button:focus {
+    outline: none !important;
+}
+
+.box_shadow {
+    -webkit-box-shadow: 0 1px 6px 0 rgba(133, 123, 123,0.75);
+    -moz-box-shadow: 0 1px 6px 0 rgba(133, 123, 123,0.75);
+    box-shadow: 0 1px 6px 0 rgba(133, 123, 123,0.75);
+}

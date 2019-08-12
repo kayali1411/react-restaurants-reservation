@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
+import style from '../style/Control.module.css';
 import RestaurantsContext from '../context/restaurants-context';
 
 const Control = () => {
@@ -25,40 +26,40 @@ const Control = () => {
     }, [sortBy, sortType]);
 
     return (
-        <div>
-            <div>
+        <div className={[style.control, style.box_shadow].join(' ')}>
+            <div className={style.selected_filter_block}>
                 {filter.price !== undefined && (
-                    <div>
+                    <div className={[style.selected_filter, style.box_shadow].join(' ')}>
                         min price: {filter.price.min}
                     </div>
                 )}
                 {filter.price !== undefined && (
-                    <div>
+                    <div className={[style.selected_filter, style.box_shadow].join(' ')}>
                         max price: {filter.price.max}
                     </div>
                 )}
                 {filter.rating !== undefined && (
-                    <div>
+                    <div className={[style.selected_filter, style.box_shadow].join(' ')}>
                         rating: {filter.rating}
                     </div>
                 )}
                 {filter.cuisines !== undefined && filter.cuisines.map((cuisine) => (
-                    <div key={cuisine}>
+                    <div className={[style.selected_filter, style.box_shadow].join(' ')} key={cuisine}>
                         cuisine: {cuisine}
                     </div>
                 ))}
             </div>
-            <div>
-                <label htmlFor="sort-by">Sort By</label>
-                <select name="sort-by" id="sort-by" onChange={handleSortBy} value={sortBy}>
+            <div className={style.sort_by}>
+                <label className={style.sort_by_label} htmlFor="sort-by">Sort By</label>
+                <select className={[style.select, style.box_shadow].join(' ')} name="sort-by" id="sort-by" onChange={handleSortBy} value={sortBy}>
                     <option value="text">A - Z</option>
                     <option value="price">Price</option>
                     <option value="rating">Rating</option>
                 </select>
             </div>
-            <div>
-                <button onClick={handleSortType} data-value="ASC" data-active={sortType === 'ASC'}>ASC</button>
-                <button onClick={handleSortType} data-value="DSC" data-active={sortType === 'DSC'}>DSC</button>
+            <div className={style.sort_type}>
+                <button className={[style.button, style.box_shadow].join(' ')} onClick={handleSortType} data-value="ASC" data-active={sortType === 'ASC'}>ASC</button>
+                <button className={[style.button, style.box_shadow].join(' ')} onClick={handleSortType} data-value="DSC" data-active={sortType === 'DSC'}>DSC</button>
             </div>
         </div>
     );
