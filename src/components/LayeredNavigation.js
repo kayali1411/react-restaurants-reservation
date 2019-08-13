@@ -54,58 +54,60 @@ const LayeredNavigation = () => {
 
     return (
         <div className={[style.layered_navigation].join(' ')}>
-            <div>
-                <h3>Rating</h3>
+            <div className={style.content}>
                 <div>
-                    <label className={style.label}>1
-                        <input type="radio" name="rating" value="1" checked={rating === 1} onChange={applyRating} />
-                        <span className={style.checkmark}></span>
-                    </label>
-                    <label className={style.label}>2
-                        <input type="radio" name="rating" value="2" checked={rating === 2} onChange={applyRating} />
-                        <span className={style.checkmark}></span>
-                    </label>
-                    <label className={style.label}>3
-                        <input type="radio" name="rating" value="3" checked={rating === 3} onChange={applyRating} />
-                        <span className={style.checkmark}></span>
-                    </label>
-                    <label className={style.label}>4
-                        <input type="radio" name="rating" value="4" checked={rating === 4} onChange={applyRating} />
-                        <span className={style.checkmark}></span>
-                    </label>
-                    <label className={style.label}>5
-                        <input type="radio" name="rating" value="5" checked={rating === 5} onChange={applyRating} />
-                        <span className={style.checkmark}></span>
-                    </label>
+                    <h3>Rating</h3>
+                    <div>
+                        <label className={style.label}>1
+                            <input type="radio" name="rating" value="1" checked={rating === 1} onChange={applyRating} />
+                            <span className={style.checkmark}></span>
+                        </label>
+                        <label className={style.label}>2
+                            <input type="radio" name="rating" value="2" checked={rating === 2} onChange={applyRating} />
+                            <span className={style.checkmark}></span>
+                        </label>
+                        <label className={style.label}>3
+                            <input type="radio" name="rating" value="3" checked={rating === 3} onChange={applyRating} />
+                            <span className={style.checkmark}></span>
+                        </label>
+                        <label className={style.label}>4
+                            <input type="radio" name="rating" value="4" checked={rating === 4} onChange={applyRating} />
+                            <span className={style.checkmark}></span>
+                        </label>
+                        <label className={style.label}>5
+                            <input type="radio" name="rating" value="5" checked={rating === 5} onChange={applyRating} />
+                            <span className={style.checkmark}></span>
+                        </label>
+                    </div>
                 </div>
-            </div>
-            <div className={style.splitter}></div>
-            <div>
-                <h3>Price</h3>
-                <div className={style.price_slider}>
-                    <InputRange
-                        maxValue={5}
-                        minValue={1}
-                        value={price}
-                        onChange={applyPrice}
-                    />
-                </div>
-            </div>
-            <div className={style.splitter}></div>
-            <div>
-                <h3>Cuisines</h3>
+                <div className={style.splitter}></div>
                 <div>
-                    {
-                        cuisinesData.map((cuisine) => (
-                            <label key={cuisine} className={style.label}>{cuisine}
-                                <input type="checkbox" name="checkbox[]" value={cuisine} checked={!!cuisines.find((cus) => cus === cuisine)} onChange={applyCuisine} />
-                                <span className={style.checkmark_checkbox}></span>
-                            </label>
-                        ))
-                    }
+                    <h3>Price</h3>
+                    <div className={style.price_slider}>
+                        <InputRange
+                            maxValue={5}
+                            minValue={1}
+                            value={price}
+                            onChange={applyPrice}
+                        />
+                    </div>
                 </div>
+                <div className={style.splitter}></div>
+                <div>
+                    <h3>Cuisines</h3>
+                    <div>
+                        {
+                            cuisinesData.map((cuisine) => (
+                                <label key={cuisine} className={style.label}>{cuisine}
+                                    <input type="checkbox" name="checkbox[]" value={cuisine} checked={!!cuisines.find((cus) => cus === cuisine)} onChange={applyCuisine} />
+                                    <span className={style.checkmark_checkbox}></span>
+                                </label>
+                            ))
+                        }
+                    </div>
+                </div>
+                <div className={style.splitter}></div>
             </div>
-            <div className={style.splitter}></div>
         </div>
     );
 };

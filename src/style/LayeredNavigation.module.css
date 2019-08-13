@@ -1,7 +1,6 @@
 .layered_navigation {
     float: left;
-    width: 15%;
-    padding: 25px;
+    width: 20%;
 }
 
 .box_shadow {
@@ -102,6 +101,10 @@ h3 {
     content: "";
     position: absolute;
     display: none;
+}
+
+.content {
+    padding: 25px;
 }
 
 .label input:checked ~ .checkmark_checkbox:after {

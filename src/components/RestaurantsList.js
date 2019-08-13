@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import RestaurantsContext from '../context/restaurants-context';
 import Restaurant from './Restaurant';
+import style from '../style/RestaurantsList.module.css';
 import { restaurantsData } from '../data';
 
 const RestaurantsList = () => {
@@ -39,7 +40,7 @@ const RestaurantsList = () => {
     }, [filter]);
 
     return (
-        <div>
+        <div className={style.grid}>
             {restaurants.map((restaurant) => <Restaurant key={restaurant.name} info={restaurant} />)}
         </div>
     );
