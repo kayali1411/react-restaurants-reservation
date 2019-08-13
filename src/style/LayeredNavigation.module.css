@@ -80,3 +80,42 @@ h3 {
     border-radius: 50%;
     background: white;
 }
+
+.checkmark_checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+.label:hover input ~ .checkmark_checkbox {
+    background-color: #ccc;
+}
+
+.label input:checked ~ .checkmark_checkbox {
+    background-color: #F15F5C;
+}
+
+.checkmark_checkbox:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.label input:checked ~ .checkmark_checkbox:after {
+    display: block;
+}
+
+.label .checkmark_checkbox:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}

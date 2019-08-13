@@ -102,11 +102,10 @@ const LayeredNavigation = () => {
                 <div>
                     {
                         cuisinesData.map((cuisine) => (
-                            <div key={cuisine}>
+                            <label key={cuisine} className={style.label}>{cuisine}
                                 <input type="checkbox" name="checkbox[]" value={cuisine} checked={!!cuisines.find((cus) => cus === cuisine)} onChange={applyCuisine} />
-                                <span>{cuisine}</span>
-                                <br/>
-                            </div>
+                                <span className={style.checkmark_checkbox}></span>
+                            </label>
                         ))
                     }
                 </div>
