@@ -119,3 +119,20 @@ h3 {
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+
+.price_slider {
+    padding-right: 40px;
+}
+
+.price_slider > div > span {
+    display: none;
+}
+
+.price_slider > div > div > div {
+    background: #F15F5C !important;
+}
+
+.price_slider > div > div > span > div {
+    background: #F15F5C !important;
+    border-color: #F15F5C !important;
+}

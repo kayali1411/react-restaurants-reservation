@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef, useContext} from 'react';
 import RestaurantsContext from '../context/restaurants-context';
+import InputRange from 'react-input-range';
 import style from '../style/LayeredNavigation.module.css';
+import 'react-input-range/lib/css/index.css'
 import { cuisinesData } from '../data';
 
 const LayeredNavigation = () => {
@@ -18,20 +20,9 @@ const LayeredNavigation = () => {
         setRating(Number(e.target.value));
     };
 
-    const applyMinPrice = (e) => {
+    const applyPrice =(price) => {
         priceRef.current = true;
-        setPrice({
-            ...price,
-            min: Number(e.target.value)
-        })
-    };
-
-    const applyMaxPrice = (e) => {
-        priceRef.current = true;
-        setPrice({
-            ...price,
-            max: Number(e.target.value)
-        })
+        setPrice(price);
     };
 
     const applyCuisine = (e) => {
@@ -91,9 +82,13 @@ const LayeredNavigation = () => {
             <div className={style.splitter}></div>
             <div>
                 <h3>Price</h3>
-                <div>
-                    <input type="range" value={price.min} onChange={applyMinPrice} min="1" max="5" step="1" />
-                    <input type="range" value={price.max} onChange={applyMaxPrice} min="1" max="5" step="1" />
+                <div className={style.price_slider}>
+                    <InputRange
+                        maxValue={5}
+                        minValue={1}
+                        value={price}
+                        onChange={applyPrice}
+                    />
                 </div>
             </div>
             <div className={style.splitter}></div>
