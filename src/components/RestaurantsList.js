@@ -41,7 +41,9 @@ const RestaurantsList = () => {
 
     return (
         <div className={style.grid}>
-            {restaurants.map((restaurant) => <Restaurant key={restaurant.name} info={restaurant} />)}
+            <div className={style.items_block}>
+                {restaurants.map((restaurant) => <Restaurant key={restaurant.name} info={restaurant} />)}
+            </div>
         </div>
     );
 };

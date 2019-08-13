@@ -1,10 +1,11 @@
 import React from 'react';
 import Gallery from '../gallery';
+import style from '../style/Restaurant.module.css';
 
 const Restaurant = ({info}) => {
     return (
-        <div>
-            <h1>{info.name}</h1>
+        <div className={[style.item, style.box_shadow].join(' ')}>
+            <h2>{info.name}</h2>
             <img src={Gallery[info.id]} alt={info.name} />
             <p>price: {info.price}</p>
             <p>rating: {info.rating}</p>
