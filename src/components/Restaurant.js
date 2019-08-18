@@ -7,9 +7,21 @@ const Restaurant = ({info}) => {
         <div className={[style.item, style.box_shadow].join(' ')}>
             <h2>{info.name}</h2>
             <img src={Gallery[info.id]} alt={info.name} />
-            <p>price: {info.price}</p>
-            <p>rating: {info.rating}</p>
-            <p>cuisine: {info.cuisines.map((cuisine) => <span key={cuisine}>{cuisine}</span>)}</p>
+            <div className={style.item_info}>
+                <p>{Array(1,2,3,4,5).map((star) => {
+                    if(info.rating >= star) {
+                        return (<span key={star} className={[style.star, style.star_checked].join(' ')}></span>)
+                    } else {
+                        return (<span key={star} className={style.star}></span>)
+                    }
+                })}</p>
+                <p>
+                    {String('$').repeat(info.price)}
+                </p>
+            </div>
+            <div>
+                <p>Cuisines:<br/> {info.cuisines.join('-')}</p>
+            </div>
         </div>
     )
 };

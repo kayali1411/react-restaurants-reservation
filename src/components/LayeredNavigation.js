@@ -62,9 +62,9 @@ const LayeredNavigation = () => {
                             <label key={rateValue} className={style.label}>
                                 {Array(1,2,3,4,5).map((star) => {
                                     if(rateValue >= star) {
-                                        return (<span className={[style.star, style.star_checked].join(' ')}></span>)
+                                        return (<span key={[rateValue, '-', star].join('')} className={[style.star, style.star_checked].join(' ')}></span>)
                                     } else {
-                                        return (<span className={style.star}></span>)
+                                        return (<span key={[rateValue, '-', star].join('')} className={style.star}></span>)
                                     }
                                 })}
                                 <input type="radio" name="rating" value={rateValue} checked={rating === rateValue} onChange={applyRating} />

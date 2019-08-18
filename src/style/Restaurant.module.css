@@ -9,10 +9,35 @@
     border-radius: 5px;
     padding: 10px;
     text-align: center;
+    cursor: pointer;
+}
+
+.item p {
+    font-weight: bold;
+    margin: 8px 15px;
+}
+
+.item_info {
+    display: flex;
+    justify-content: space-between;
 }
 
 .box_shadow {
     -webkit-box-shadow: 0 1px 6px 0 rgba(133, 123, 123,0.75);
     -moz-box-shadow: 0 1px 6px 0 rgba(133, 123, 123,0.75);
     box-shadow: 0 1px 6px 0 rgba(133, 123, 123,0.75);
+}
+
+.star {
+    position: relative;
+}
+
+.star_checked {
+    color: #F15F5C;
+}
+
+.star:before {
+    font-family: FontAwesome;
+    content: '\f005';
+    padding-right: 2px;
 }
