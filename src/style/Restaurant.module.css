@@ -30,10 +30,22 @@
 
 .star {
     position: relative;
+    color: #333;
+}
+
+.money {
+    position: relative;
+    color: #333;
 }
 
 .star_checked {
     color: #F15F5C;
+}
+
+.money:before {
+    font-family: FontAwesome;
+    content: '\f155';
+    padding-left: 2px;
 }
 
 .star:before {

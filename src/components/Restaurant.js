@@ -16,7 +16,7 @@ const Restaurant = ({info}) => {
                     }
                 })}</p>
                 <p>
-                    {String('$').repeat(info.price)}
+                    {Array(parseInt(info.price)).fill('$').map(() => (<span key={Math.random()} className={style.money}></span>))}
                 </p>
             </div>
             <div>
