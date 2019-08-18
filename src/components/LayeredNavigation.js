@@ -58,26 +58,19 @@ const LayeredNavigation = () => {
                 <div>
                     <h3>Rating</h3>
                     <div>
-                        <label className={style.label}>1
-                            <input type="radio" name="rating" value="1" checked={rating === 1} onChange={applyRating} />
-                            <span className={style.checkmark}></span>
-                        </label>
-                        <label className={style.label}>2
-                            <input type="radio" name="rating" value="2" checked={rating === 2} onChange={applyRating} />
-                            <span className={style.checkmark}></span>
-                        </label>
-                        <label className={style.label}>3
-                            <input type="radio" name="rating" value="3" checked={rating === 3} onChange={applyRating} />
-                            <span className={style.checkmark}></span>
-                        </label>
-                        <label className={style.label}>4
-                            <input type="radio" name="rating" value="4" checked={rating === 4} onChange={applyRating} />
-                            <span className={style.checkmark}></span>
-                        </label>
-                        <label className={style.label}>5
-                            <input type="radio" name="rating" value="5" checked={rating === 5} onChange={applyRating} />
-                            <span className={style.checkmark}></span>
-                        </label>
+                        {Array(1,2,3,4,5).map((rateValue) => (
+                            <label key={rateValue} className={style.label}>
+                                {Array(1,2,3,4,5).map((star) => {
+                                    if(rateValue >= star) {
+                                        return (<span className={[style.star, style.star_checked].join(' ')}></span>)
+                                    } else {
+                                        return (<span className={style.star}></span>)
+                                    }
+                                })}
+                                <input type="radio" name="rating" value={rateValue} checked={rating === rateValue} onChange={applyRating} />
+                                <span className={style.checkmark}></span>
+                            </label>
+                        ))}
                     </div>
                 </div>
                 <div className={style.splitter}></div>
