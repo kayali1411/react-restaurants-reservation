@@ -38,10 +38,6 @@
     color: #333;
 }
 
-.star_checked {
-    color: #F15F5C;
-}
-
 .money:before {
     font-family: FontAwesome;
     content: '\f155';
@@ -50,6 +46,11 @@
 
 .star:before {
     font-family: FontAwesome;
-    content: '\f005';
+    content: '\f006';
     padding-right: 2px;
+}
+
+.star_checked:before {
+    content: '\f005';
+    color: #F15F5C;
 }

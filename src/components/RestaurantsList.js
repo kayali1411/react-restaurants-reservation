@@ -41,9 +41,16 @@ const RestaurantsList = () => {
 
     return (
         <div className={style.grid}>
-            <div className={style.items_block}>
-                {restaurants.map((restaurant) => <Restaurant key={restaurant.name} info={restaurant} />)}
-            </div>
+            {restaurants.length > 0 && (
+                <div className={style.items_block}>
+                    {restaurants.map((restaurant) => <Restaurant key={restaurant.name} info={restaurant} />)}
+                </div>
+            )}
+            {restaurants.length === 0 && (
+                <div className={style.empty_list}>
+                    <h1>No Restaurants Available</h1>
+                </div>
+            )}
         </div>
     );
 };
