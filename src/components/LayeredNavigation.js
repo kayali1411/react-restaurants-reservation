@@ -89,9 +89,9 @@ const LayeredNavigation = () => {
                 <div>
                     <h3>Rating</h3>
                     <div>
-                        {Array(1,2,3,4,5).map((rateValue) => (
+                        {[1,2,3,4,5].map((rateValue) => (
                             <label key={rateValue} className={style.label}>
-                                {Array(1,2,3,4,5).map((star) => {
+                                {[1,2,3,4,5].map((star) => {
                                     if(rateValue >= star) {
                                         return (<span key={[rateValue, '-', star].join('')} className={[style.star, style.star_checked].join(' ')}></span>)
                                     } else {

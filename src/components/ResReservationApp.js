@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from 'react';
+import React, { useReducer } from 'react';
 import Header from './Header';
 import RestaurantsList from './RestaurantsList';
 import LayeredNavigation from './LayeredNavigation';

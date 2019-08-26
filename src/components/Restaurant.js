@@ -8,7 +8,7 @@ const Restaurant = ({info}) => {
             <h2>{info.name}</h2>
             <img src={Gallery[info.id]} alt={info.name} />
             <div className={style.item_info}>
-                <p>{Array(1,2,3,4,5).map((star) => {
+                <p>{[1,2,3,4,5].map((star) => {
                     if(info.rating >= star) {
                         return (<span key={star} className={[style.star, style.star_checked].join(' ')}></span>)
                     } else {
@@ -16,7 +16,7 @@ const Restaurant = ({info}) => {
                     }
                 })}</p>
                 <p>
-                    {Array(parseInt(info.price)).fill('$').map(() => (<span key={Math.random()} className={style.money}></span>))}
+                    {[parseInt(info.price)].fill('$').map(() => (<span key={Math.random()} className={style.money}></span>))}
                 </p>
             </div>
             <div>
