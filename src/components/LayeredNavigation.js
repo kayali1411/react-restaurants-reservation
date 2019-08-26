@@ -82,8 +82,8 @@ const LayeredNavigation = () => {
 
     return (
         <div className={[style.layered_navigation].join(' ')}>
-            <div className={style.clear_filter_button}>
-                <button onClick={handleClearFilter} disabled={getClearBtnStatus()}>Clear Filter</button>
+            <div className={style.clear_filter_block}>
+                <button className={[style.clear_filter_button, style.box_shadow].join(' ')} onClick={handleClearFilter} disabled={getClearBtnStatus()}>Clear Filter</button>
             </div>
             <div className={style.content}>
                 <div>
