@@ -10,6 +10,7 @@ const LayeredNavigation = () => {
     const [cuisines, setCuisines]  = useState(filter.cuisines || []);
     const [price, setPrice]        = useState(filter.price || '');
     const [rating, setRating]      = useState(filter.rating || '');
+    const [clear, setClear]        = useState({});
 
     const priceRef   = useRef(false);
     const ratingRef  = useRef(false);
@@ -18,21 +19,48 @@ const LayeredNavigation = () => {
     const applyRating = (e) => {
         ratingRef.current = true;
         setRating(Number(e.target.value));
+        setClear({
+            ...clear,
+            rating: true
+        });
     };
 
     const applyPrice = (price) => {
         priceRef.current = true;
         setPrice(price);
+        setClear({
+            ...clear,
+            price: true
+        });
     };
 
     const applyCuisine = (e) => {
         cuisineRef.current = true;
         if(e.target.checked) {
             setCuisines(cuisines.concat(e.target.value));
+            setClear({
+                ...clear,
+                cuisines: true
+            });
         } else {
+            if(cuisines.length <= 1) {
+                setClear({
+                    ...clear,
+                    cuisines: false
+                });
+            }
             setCuisines(cuisines.filter((cuisine) => cuisine !== e.target.value));
         }
     }
+
+    const handleClearFilter = () => {
+        setClear({});
+        setCuisines([]);
+        setRating('');
+        setPrice('');
+    }
+
+    const getClearBtnStatus = () => !clear.rating && !clear.price && !clear.cuisines;
 
     useEffect(() => {
         if(cuisineRef.current) {
@@ -54,6 +82,9 @@ const LayeredNavigation = () => {
 
     return (
         <div className={[style.layered_navigation].join(' ')}>
+            <div className={style.clear_filter_button}>
+                <button onClick={handleClearFilter} disabled={getClearBtnStatus()}>Clear Filter</button>
+            </div>
             <div className={style.content}>
                 <div>
                     <h3>Rating</h3>

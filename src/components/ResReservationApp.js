@@ -13,10 +13,6 @@ const App = () => {
         filterDispatch
     }
 
-    useEffect(() => {
-        console.log(filter);
-    }, [filter]);
-
     return (
         <RestaurantsContext.Provider value={store}>
             <Header/>
