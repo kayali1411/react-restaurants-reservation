@@ -94,3 +94,18 @@
     -moz-box-shadow: 0 1px 6px 0 rgba(133, 123, 123,0.75);
     box-shadow: 0 1px 6px 0 rgba(133, 123, 123,0.75);
 }
+
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2) {
+    .control {
+        flex-direction: column !important;
+        padding: 20px;
+        align-items: center;
+    }
+    .sort_by, .sort_type {
+        padding-left: 0 !important;
+        padding-top: 20px;
+    }
+}

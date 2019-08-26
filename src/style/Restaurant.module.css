@@ -54,3 +54,22 @@
     content: '\f005';
     color: #F15F5C;
 }
+
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2) {
+    .item img {
+        width: 80px;
+        height: 80px;
+        display: block;
+        margin: 0 auto;
+    }
+    .item p {
+        font-size: 12px;
+    }
+    .item h2 {
+        font-size: 20px;
+    }
+
+}

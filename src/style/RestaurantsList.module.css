@@ -15,3 +15,18 @@
 .empty_list {
     padding: 80px 45px;
 }
+
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2) {
+    .grid {
+        float: none !important;
+        width: 100% !important;
+    }
+    .items_block {
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+}

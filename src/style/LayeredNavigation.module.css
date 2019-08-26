@@ -23,6 +23,10 @@ h3 {
     border-radius: 5px;
 }
 
+.layered_navigation .splitter:last-child {
+    margin-bottom: 0;
+}
+
 .label {
     display: block;
     position: relative;
@@ -184,4 +188,17 @@ h3 {
 
 .clear_filter_block {
     padding: 25px 25px 0;
+}
+
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2) {
+    .layered_navigation {
+        float: none !important;
+        width: 100% !important;
+    }
+    .content {
+        padding-bottom: 0 !important;
+    }
 }
