@@ -28,22 +28,22 @@ const Control = () => {
     return (
         <div className={[style.control, style.box_shadow].join(' ')}>
             <div className={style.selected_filter_block}>
-                {filter.price !== undefined && (
+                {!!filter.price && (
                     <div className={[style.selected_filter, style.box_shadow].join(' ')}>
                         min price: {filter.price.min}
                     </div>
                 )}
-                {filter.price !== undefined && (
+                {!!filter.price && (
                     <div className={[style.selected_filter, style.box_shadow].join(' ')}>
                         max price: {filter.price.max}
                     </div>
                 )}
-                {filter.rating !== undefined && (
+                {!!filter.rating && (
                     <div className={[style.selected_filter, style.box_shadow].join(' ')}>
                         rating: {filter.rating}
                     </div>
                 )}
-                {filter.cuisines !== undefined && filter.cuisines.map((cuisine) => (
+                {!!filter.cuisines && filter.cuisines.map((cuisine) => (
                     <div className={[style.selected_filter, style.box_shadow].join(' ')} key={cuisine}>
                         cuisine: {cuisine}
                     </div>

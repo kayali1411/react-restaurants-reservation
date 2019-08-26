@@ -8,7 +8,7 @@ import { cuisinesData } from '../data';
 const LayeredNavigation = () => {
     const {filter, filterDispatch} = useContext(RestaurantsContext);
     const [cuisines, setCuisines]  = useState(filter.cuisines || []);
-    const [price, setPrice]        = useState(filter.price || { min: 1, max: 5});
+    const [price, setPrice]        = useState(filter.price || '');
     const [rating, setRating]      = useState(filter.rating || '');
 
     const priceRef   = useRef(false);
@@ -20,7 +20,7 @@ const LayeredNavigation = () => {
         setRating(Number(e.target.value));
     };
 
-    const applyPrice =(price) => {
+    const applyPrice = (price) => {
         priceRef.current = true;
         setPrice(price);
     };
@@ -80,7 +80,7 @@ const LayeredNavigation = () => {
                         <InputRange
                             maxValue={5}
                             minValue={1}
-                            value={price}
+                            value={price || {min:1, max:5}}
                             onChange={applyPrice}
                         />
                     </div>
