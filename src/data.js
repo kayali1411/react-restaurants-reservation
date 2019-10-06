@@ -2,7 +2,7 @@ const restaurantsData = [
     {
         id: 'burgerKing',
         name: 'Burger King',
-        price: 2,
+        price: 1,
         rating: 2,
         cuisines: ['burgers', 'fast food']
     },

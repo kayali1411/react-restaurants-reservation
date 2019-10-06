@@ -33,7 +33,7 @@ const Restaurant = ({info}) => {
                     }
                 })}</p>
                 <p>
-                    {[parseInt(info.price)].fill('$').map(() => (<span key={Math.random()} className={style.money}></span>))}
+                    {Array(parseInt(info.price)).fill('$').map(() => (<span key={Math.random()} className={style.money}></span>))}
                 </p>
             </div>
             <div>

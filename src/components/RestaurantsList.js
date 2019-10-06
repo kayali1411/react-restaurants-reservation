@@ -31,10 +31,10 @@ const RestaurantsList = () => {
                     return a.price < b.price ? 1 : -1;
                 }
                 if(filter.sortBy === 'rating' && filter.sortType === 'ASC') {
-                    return a.price > b.price ? 1 : -1;
+                    return a.rating > b.rating ? 1 : -1;
                 }
                 if(filter.sortBy === 'rating' && filter.sortType === 'DSC') {
-                    return a.price < b.price ? 1 : -1;
+                    return a.rating < b.rating ? 1 : -1;
                 }
             }));
     }, [filter]);
