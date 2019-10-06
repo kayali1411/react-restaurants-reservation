@@ -4,7 +4,7 @@ import style from '../style/Header.module.css';
 
 const Header = () => (
   <header className={style.header}>
-      <img className={style.logo} width={100} src={logo} alt="logo" />
+      <img className={style.logo} src={logo} alt="logo" />
       <h1>React Restaurants Reservation</h1>
   </header>
 );

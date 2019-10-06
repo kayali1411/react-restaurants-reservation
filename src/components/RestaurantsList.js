@@ -43,7 +43,7 @@ const RestaurantsList = () => {
         <div className={style.grid}>
             {restaurants.length > 0 && (
                 <div className={style.items_block}>
-                    {restaurants.map((restaurant) => <Restaurant key={restaurant.name} info={restaurant} />)}
+                    {restaurants.map((restaurant) => <Restaurant key={restaurant.id} info={restaurant} />)}
                 </div>
             )}
             {restaurants.length === 0 && (

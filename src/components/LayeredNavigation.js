@@ -119,7 +119,7 @@ const LayeredNavigation = () => {
                 <div className={style.splitter}></div>
                 <div>
                     <h3>Cuisines</h3>
-                    <div>
+                    <div className={style.cuisines_block}>
                         {
                             cuisinesData.map((cuisine) => (
                                 <label key={cuisine} className={style.label}>{cuisine}

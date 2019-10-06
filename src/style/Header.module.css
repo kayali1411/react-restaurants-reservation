@@ -1,22 +1,24 @@
 .header {
-    display: flex;
-    flex-direction: row;
-    padding: 10px 40px;
+    display: grid;
+    grid-template-columns: 100px auto;
+    grid-template-rows: 80px;
+    padding: 15px 40px;
     background-color: #282c34;
     color: #F9F9F9;
-}
-
-.logo {
-    width: 100px;
-    height: 100px;
+    grid-area: header;
+    box-sizing: border-box;
+    align-content: center;
+    align-items: center;
 }
 
 h1 {
     font-size: 38px;
-    align-self: center;
     letter-spacing: 2px;
     margin: 0;
-    flex-grow: 1;
+}
+
+.logo {
+    max-width: 100%;
 }
 
 @media only screen
@@ -24,10 +26,10 @@ and (min-device-width: 375px)
 and (max-device-width: 667px)
 and (-webkit-min-device-pixel-ratio: 2) {
     header {
-        padding: 10px 5px !important;
-        align-items: center;
+        padding: 10px !important;
+        grid-template-columns: 80px auto !important;
     }
     h1 {
-        font-size: 30px;
+        font-size: 23px;
     }
 }

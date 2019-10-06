@@ -12,4 +12,24 @@ body {
 
 #root {
   overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-areas:
+          "header header"
+          "control control"
+          "layered-navigation content";
+}
+
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2) {
+  #root {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+            "header"
+            "control"
+            "layered-navigation"
+            "content";
+  }
 }
